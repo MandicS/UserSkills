@@ -1,0 +1,24 @@
+.Navigation {
+    background: linear-gradient(0deg, rgba(93,93,93,0.7) 0%, rgba(85,85,85,1) 0%, rgba(47,232,236,0.7) 55%);
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 30px;
+}
+
+.Logo {
+    font-size: 20px;
+    background: -webkit-linear-gradient(#3ece05, rgba(173, 7, 7, 0.702));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: bold;
+    cursor: wait;
+}
+
+.Comands {
+    padding: 10px;
+}
+
+.Comands:hover {
+    color: red;
+    cursor: pointer;
+}

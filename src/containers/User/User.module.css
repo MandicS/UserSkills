@@ -1,0 +1,12 @@
+.User {
+    position: absolute;
+    height: calc(100% - 63px);
+    width: 100%;
+}
+
+.User > img {
+    display: flex;
+    margin: auto;
+    width: 250px;
+    height: auto;
+}

@@ -1,0 +1,15 @@
+.Skills {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    width: 70%;
+    text-align: center;
+}
+
+.Skills > img {
+    margin: auto;
+    width: 250px;
+    height: auto;
+}
+

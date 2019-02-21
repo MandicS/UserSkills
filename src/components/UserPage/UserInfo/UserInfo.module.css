@@ -1,0 +1,16 @@
+.UserInfo {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    width: 70%;
+    border: 1px solid black;
+    text-align: center;
+}
+
+.UserInfo > img {
+    margin: auto;
+    width: 250px;
+    height: auto;
+}
+
