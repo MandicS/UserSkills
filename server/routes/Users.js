@@ -76,14 +76,9 @@ users.post('/login', (req, res) => {
         })
 })
 
-users.post('/skills', (req, res) => {
-    Skills.findAll({
-        attributes: ['name', 'description', 'skill_id'],
-        where: {user_id: req.body.user_id}
-    }).then(selectedSkill => res.send(selectedSkill))
-})
 
-users.post('/user', (req, res) => {
+
+users.post('/user/skill', (req, res) => {
     User.findOne({
         where: {
             email: req.body.email
@@ -99,15 +94,39 @@ users.post('/user', (req, res) => {
         Skills.create(userSkills)
             .then(skill => {
                 res.writeContinue(skill.name + ' is created!')
+                Skills.findAll({
+                    attributes: ['name', 'description', 'skill_id'],
+                    where: { user_id: req.body.user_id }
+                }).then(selectedSkill => res.send(selectedSkill))
             })
-            // .then(
-            //     res.setTimeout(100, [Skills.findAll({
-            //         attributes: ['name', 'description'],
-            //         where: {user_id: user.user_id}
-            //     }).then(selectedSkill => res.json(selectedSkill))])
-            // )
-            // .catch(res.status(400).json({error: 'Skill not created'}))
+        // .then(
+        //     res.setTimeout(100, [Skills.findAll({
+        //         attributes: ['name', 'description'],
+        //         where: {user_id: user.user_id}
+        //     }).then(selectedSkill => res.json(selectedSkill))])
+        // )
+        // .catch(res.status(400).json({error: 'Skill not created'}))
     })
+})
+
+users.post('/skills', (req, res) => {
+    Skills.findAll({
+        attributes: ['name', 'description', 'skill_id'],
+        where: { user_id: req.body.user_id }
+    }).then(selectedSkill => res.send(selectedSkill))
+})
+
+users.put('/skills/update', (req, res) => {
+    Skills.findOne({
+        where: {
+            skill_id: req.body.skill_id
+        }
+    }).then(skill => {
+        Skills.update({name: req.body.name, description: req.body.description }, { fields: ['name', 'description'] })
+    }).then(res => {
+        res.json(console.log(res))
+    }
+    )
 })
 
 module.exports = users;

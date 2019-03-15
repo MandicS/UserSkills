@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 22, 2019 at 12:39 AM
+-- Generation Time: Mar 15, 2019 at 06:38 PM
 -- Server version: 10.1.32-MariaDB
 -- PHP Version: 7.2.5
 
@@ -40,8 +40,17 @@ CREATE TABLE `skills` (
 --
 
 INSERT INTO `skills` (`skill_id`, `name`, `description`, `user_id`) VALUES
-(290, 'ascasc', 'ascasc', 6),
-(291, 'asc', 'asc', 6);
+(78, 'csa', 'csa', 1),
+(79, 'sdvvds', 'vdssdv', 1),
+(80, 'csa', 'asc', 1),
+(81, 'htrhtr', 'htrhtrh', 1),
+(82, 'bfd', 'bfd', 1),
+(83, 'asccsa', 'sacascascas', 1),
+(84, 'asc', 'asc', 1),
+(85, 'asc', 'asc', 1),
+(86, '123', '123', 1),
+(87, '234', '234', 1),
+(88, '345', '345', 1);
 
 -- --------------------------------------------------------
 
@@ -62,12 +71,8 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`user_id`, `name`, `email`, `password`, `birthday`) VALUES
-(2, 'test', 'test@gmail.com', '$2b$10$U344jZYsGqlb.I2zeN7N3OM3NW6d02Ukgz761nPBzeYNDlcGab0KK', '2017-06-15'),
-(3, 'test', 'manda@gmail.com', '$2b$10$AeMptVD7y/aiKRG3RX0G3.PNQ7Uew5O0uTsqyAmNiLaYZoxYSnaOS', '2017-06-15'),
-(6, 'mandara', 'mandara@gmail.com', '$2b$10$bvZiXDYRAXJfu4n9HDC8Oez71lUF32/oNLhS12JK53vV0LSWSUHRK', '1995-03-23'),
-(7, 'stefan', 'stefan@gmail.com', '$2b$10$g5pl4YikKCP9Hkohn2HAhOhvvF3Eu3HLIFEcX.oxKSRT.BPB.uB5a', '2019-02-05'),
-(8, 'marija', 'marija@gmail.com', '$2b$10$t/lJq6L9JPfPlRmsYyFMIeACqUKzRsyes/NElDSEfVe1KAAzuzW5.', '1996-08-03'),
-(9, 'some name of the skill', 'email@gmail.com', '$2b$10$h3GKCdGkPqag0j10iEKczeF3tGpxJP4DZu7UPiKI8y7qG91s73B7S', '0000-00-00');
+(1, 'Mandara', 'mandara@gmail.com', '$2b$10$cmzonYqQ9wgp/t0mKrNvEeb1.ZWLO7djYws4m0i/dUv.2rrsb746m', '2019-02-24'),
+(2, 'Stefan', 'stefan@gmail.com', '$2b$10$U6dxSPSF7eMVEZXmAJ3Dde5uSpbvNvLQJob8RvLResxoXZje7Ww3G', '2019-02-24');
 
 --
 -- Indexes for dumped tables
@@ -94,13 +99,13 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `skills`
 --
 ALTER TABLE `skills`
-  MODIFY `skill_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=292;
+  MODIFY `skill_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=89;
 
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- Constraints for dumped tables
