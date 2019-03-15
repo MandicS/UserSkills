@@ -30,17 +30,20 @@ export const login = user => {
 export const userSkills = skill => {
     const token = localStorage.usertoken;
     const decode = jwt_decode(token);
-    return axios.post('users/user', {
+    const data =  axios.post('users/user/skill', {
         email: decode.email,
+        user_id: decode.user_id,
         name: skill.name,
         description: skill.description
     })
         .then(res => {
-            return console.log(res);
+            return res.data;
         })
         .catch(err => {
             console.log(err);
         })
+        console.log(data)
+    return data
 }
 
 export const getSkills = () => {

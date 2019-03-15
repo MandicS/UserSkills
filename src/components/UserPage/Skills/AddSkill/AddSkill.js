@@ -2,7 +2,7 @@ import React from 'react';
 
 import classes from './AddSkill.module.css';
 
-const AddSkill = ({ skName, skDesc, changeName, changeDesc, submit }) => {
+const AddSkill = ({ skName, skDesc, changeName, changeDesc, submit, refName, refDesc }) => {
     return (
         <div className={classes.LogIn}>
             <form onSubmit={submit}>
@@ -12,14 +12,16 @@ const AddSkill = ({ skName, skDesc, changeName, changeDesc, submit }) => {
                     type='text'
                     placeholder='Skill Name'
                     value={skName}
-                    onChange={changeName} />
+                    onChange={changeName} 
+                    ref={refName}/>
                 <h1>Skill Description</h1>
                 <input
                     className={classes.Text}
                     type='text'
                     placeholder='Skill Description'
                     value={skDesc}
-                    onChange={changeDesc} />
+                    onChange={changeDesc}
+                    ref={refDesc} />
                 <input
                     className={classes.Submit}
                     type='submit'

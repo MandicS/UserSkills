@@ -7,6 +7,6 @@
 .User > img {
     display: flex;
     margin: auto;
-    width: 250px;
-    height: auto;
+    width: auto;
+    height: 250px;
 }

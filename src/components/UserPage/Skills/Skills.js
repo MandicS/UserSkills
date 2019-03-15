@@ -12,15 +12,15 @@ class Skills extends Component {
         skills: [],
         skName: '',
         skDesc: '',
-        setInterval: false
+        setInterval: null
     }
 
-    nameChangeHandler = (event) => {
-        this.setState({ skName: event.target.value })
+    nameChangeHandler = (e) => {
+        this.setState({ skName: e.target.value })
     }
 
-    descriptionChangeHandler = (event) => {
-        this.setState({ skDesc: event.target.value })
+    descriptionChangeHandler = (e) => {
+        this.setState({ skDesc: e.target.value })
     }
 
     submitSkillHandler = (e) => {
@@ -31,55 +31,39 @@ class Skills extends Component {
             description: this.state.skDesc
         }
 
-        // console.log(skill);
+        userSkills(skill).then(res => this.setState({skills: res}))
 
-        userSkills(skill)
+        this.setState({skName: '', skDesc: ''})
+        // const newSkill = {
+        //     name: this.nameRef.value,
+        //     description: this.descRef.value,
+        //     skill_id: Date.now()
+        // }
+        // const domSkill = Object.assign(this.state.skills, this.state.skills.push(newSkill))
+        // this.setState({ skills: domSkill })
+
+        // this.setState({
+        //     skName: '',
+        //     skDesc: ''
+        // })
+        // getSkills().then(res => this.setState(Object.assign(this.state.skills, this.state.skills.push(res.data)))).catch((error) => console.log(error))
+        // this.setState(Object.assign(this.state.skills, this.state.skills.push(skill)))
     }
 
     componentDidMount() {
-        this.getSkillsfromDb();
+        this.skillsFromDb();
     }
 
-    componentDidUpdate(prevProps, prevState) {
-        if(this.state.skills !== prevState.skills) {
-            this.getSkillsfromDb();
-        }
-        console.log('cDU prSt', prevState.skills)
-    }
-
-    componentWillUnmount() {
-        this.getSkillsfromDb();
-    }
-
-    // componentDidMount() {
-    //     this.getSkillsfromDb();
-    //     if (!this.state.setInterval) {
-    //         let interval = setInterval(this.getSkillsfromDb, 1000);
-    //         this.setState({ setInterval: interval })
-    //     }
-
-    // }
-
-    // componentDidUnmount() {
-    //     if (this.state.setInterval) {
-    //         clearInterval(this.state.setInterval);
-    //         this.setState({ setInterval: false });
-    //     }
-    // }
-
-    getSkillsfromDb = () => {
+    skillsFromDb = () => {
         getSkills().then(res => this.setState({ skills: res.data })).catch((error) => console.log(error))
     }
 
-    // componentDidUpdate(prevProps, prevState) {
-    //     getSkills().then(res => {
-    //         if(prevState === this.state.skills)
-    //         return this.setState({ skills: res.data })
-    //     }).catch((error) => console.log(error))
-    //     console.log(this.state.skills)
+    // componentDidUpdate(prevProps, prevState, snapshot) {
+    // Typical usage (don't forget to compare props):
+    // if (this.props.userID !== prevProps.userID) {
+    //   this.fetchData(this.props.userID);
     // }
-
-
+    //   }
 
     render() {
         return (
@@ -90,9 +74,11 @@ class Skills extends Component {
                 <AddSkill
                     changeName={this.nameChangeHandler}
                     changeDesc={this.descriptionChangeHandler}
-                    skName={this.state.name}
-                    skDesc={this.state.description}
-                    submit={this.submitSkillHandler} />
+                    skName={this.state.skName}
+                    skDesc={this.state.skDesc}
+                    submit={this.submitSkillHandler}
+                    refName={(input) => { this.nameRef = input; }}
+                    refDesc={(input) => { this.descRef = input; }} />
             </div>
         );
     }

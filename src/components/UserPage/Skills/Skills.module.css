@@ -5,6 +5,8 @@
     margin: auto;
     width: 70%;
     text-align: center;
+    overflow: auto;
+    height: calc(100vh - 63px - 300px);
 }
 
 .Skills > img {
