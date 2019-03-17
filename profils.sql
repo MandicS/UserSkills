@@ -39,19 +39,6 @@ CREATE TABLE `skills` (
 -- Dumping data for table `skills`
 --
 
-INSERT INTO `skills` (`skill_id`, `name`, `description`, `user_id`) VALUES
-(78, 'csa', 'csa', 1),
-(79, 'sdvvds', 'vdssdv', 1),
-(80, 'csa', 'asc', 1),
-(81, 'htrhtr', 'htrhtrh', 1),
-(82, 'bfd', 'bfd', 1),
-(83, 'asccsa', 'sacascascas', 1),
-(84, 'asc', 'asc', 1),
-(85, 'asc', 'asc', 1),
-(86, '123', '123', 1),
-(87, '234', '234', 1),
-(88, '345', '345', 1);
-
 -- --------------------------------------------------------
 
 --
@@ -69,10 +56,6 @@ CREATE TABLE `users` (
 --
 -- Dumping data for table `users`
 --
-
-INSERT INTO `users` (`user_id`, `name`, `email`, `password`, `birthday`) VALUES
-(1, 'Mandara', 'mandara@gmail.com', '$2b$10$cmzonYqQ9wgp/t0mKrNvEeb1.ZWLO7djYws4m0i/dUv.2rrsb746m', '2019-02-24'),
-(2, 'Stefan', 'stefan@gmail.com', '$2b$10$U6dxSPSF7eMVEZXmAJ3Dde5uSpbvNvLQJob8RvLResxoXZje7Ww3G', '2019-02-24');
 
 --
 -- Indexes for dumped tables
